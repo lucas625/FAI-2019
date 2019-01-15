@@ -20,3 +20,5 @@ imagina que está dando erro.
 10) Ao usar forign key ou many to many, use related_name='nome', para ajudar a idenficiar ao usar o objeto nas querys
 11) Use assim para inserir coisas customizáveis no def __str__
     -("{} - {} - {}").format(self.id, self.thread, self.author)
+12) search_fields = ['title', 'slug'] perceba que se desejarmos usar criador, deveremos usar criador__username, pois ele é uma foreign key.
+13) ccbv é um site para estudar views, é top.

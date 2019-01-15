@@ -60,7 +60,7 @@ ROOT_URLCONF = 'redTI.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [base_dir_join('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,3 +133,5 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = base_dir_join('mediafiles')
 MEDIA_URL = '/media/'
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'

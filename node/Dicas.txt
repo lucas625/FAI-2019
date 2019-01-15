@@ -1,0 +1,3 @@
+1) npm init para iniciar o projeto
+2) node . roda o projeto
+3) swagger é bom para documentar o projeto.

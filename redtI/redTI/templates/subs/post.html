@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+        <div>
+                <p>Conteúdo: {{ post.content }}</p>
+                <div>
+                        <h3>Threads</h3>
+                        {% for thread in post.threads.all %}
+                        <a href="{% url 'subs:subrediti' thread.pk %}"><li>{{thread.title}}</li></a>
+                        {% empty %}
+                        <div>
+                                nenhuma thread foi encontrada
+                        </div>
+                        {% endfor %}
+                </div>
+                <label>{{post.autor}}</label>
+                <label>votos: {{ post.vote_count }}</label>
+        </div>
+{% endblock %}

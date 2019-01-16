@@ -1,8 +1,30 @@
 {% extends 'base.html' %}
 {% block body %}
-    <label>email: {{ user.email }}</label>
-    <label>username: {{ user.username }}</label>
-    <label>description: {{ user.description }}</label>
-    <label>karma: {{ user.karma }}</label>
-    <img src="{{ user.avatar.url }}">
+    <div>
+        <label>email: {{ user.email }}</label>
+        <label>username: {{ user.username }}</label>
+        <label>description: {{ user.description }}</label>
+        <label>karma: {{ user.karma }}</label>
+        <img src="{{ user.avatar.url }}">
+    </div>
+    <div>
+        <h1>Threads</h1>
+        {% for thread in user.threads.all %}
+            <a href="{% url 'subs:thread' thread.pk %}"><li>{{thread.title}}</li></a>
+        {% empty %}
+        <div>
+            nenhuma thread foi encontrada
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h1>Posts</h1>
+        {% for post in user.posts.all %}
+            <li>{{post.content}}</li>
+        {% empty %}
+        <div>
+            nenhum post foi encontrado
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}

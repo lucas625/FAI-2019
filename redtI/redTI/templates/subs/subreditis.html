@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% for sub in subreditis %}
+        <label>titulo: </label>
+        <a href="{% url 'subs:subrediti' sub.slug %}"><li>{{sub.title}}</li></a>
+        <label>descricao: {{ sub.descricao }}</label>
+        <label>criador: {{ sub.criador }}</label>
+    {% empty %}
+        Nenhum subrediti foi encontrado.
+    {% endfor %}
+{% endblock %}

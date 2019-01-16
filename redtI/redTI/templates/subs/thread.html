@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+        <div>
+                <label>titulo: {{ thread.title }}</label>
+                <label>autor: {{ thread.autor }}</label>
+                <label>votos: {{ thread.vote_count }}</label>
+                <div>
+                        <h3>Subreditis</h3>
+                        {% for sub in thread.subreditis.all %}
+                        <a href="{% url 'subs:subrediti' sub.pk %}"><li>{{sub.title}}</li></a>
+                        {% empty %}
+                        <div>
+                                nenhum subrediti foi encontrado
+                        </div>
+                        {% endfor %}
+                </div>
+        </div>
+{% endblock %}

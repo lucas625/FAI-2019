@@ -33,7 +33,7 @@ class Post(IndexedTimeStampedModel):
         ordering = ['created']
 
     def __str__(self):
-        return ("{} - {} - {}").format(self.id, self.thread, self.author)
+        return ("{} - {} - {}").format(self.id, self.thread, self.autor)
 
 
 class Subscription(models.Model):

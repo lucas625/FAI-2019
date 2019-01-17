@@ -8,4 +8,5 @@
     {% empty %}
         Nenhum subrediti foi encontrado.
     {% endfor %}
+    <a href="{% url 'subs:subreditiCreate' %}"><li>Crie um novo Subrediti</li></a>
 {% endblock %}

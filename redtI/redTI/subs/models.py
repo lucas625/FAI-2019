@@ -14,7 +14,7 @@ class Subrediti(models.Model):
 class Thread(IndexedTimeStampedModel):
     title = models.CharField(max_length=50)
     autor = models.ForeignKey('users.User', related_name='threads', on_delete=models.CASCADE)
-    Subrediti = models.ForeignKey('Subrediti', related_name='threads', on_delete=models.CASCADE)
+    subrediti = models.ForeignKey('Subrediti', related_name='threads', on_delete=models.CASCADE)
     vote_count = models.IntegerField(default=0)
 
     class Meta:

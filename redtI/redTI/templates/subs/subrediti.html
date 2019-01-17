@@ -3,4 +3,5 @@
         <label>titulo: {{ subrediti.title }}</label>
         <label>descricao: {{ subrediti.descricao }}</label>
         <label>criador: {{ subrediti.criador }}</label>
+        <a href="{% url 'subs:create_thread' %}?sub={{subrediti.pk}}">Criar Thread</a>
 {% endblock %}

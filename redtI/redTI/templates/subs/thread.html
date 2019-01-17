@@ -14,5 +14,17 @@
                         </div>
                         {% endfor %}
                 </div>
+                <div>
+                        <h1>Posts</h1>
+                        {% for post in thread.posts.all %}
+                                <li>{{post.content}}</li>
+                        {% empty %}
+                        <div>
+                                nenhum post foi encontrado
+                        </div>
+                        {% endfor %}
+                        <a href="{% url 'subs:create_post' %}?thread={{thread.pk}}">Fazer nova postagem</a>
+                </div>
+                
         </div>
 {% endblock %}

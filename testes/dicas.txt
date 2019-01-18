@@ -1,0 +1,6 @@
+1) fake data para o chrome, use ctrl + click
+2) a cada suite de teste, um banco de dados é criado e ao final excluído, ai não há problemas entre testes.
+3) pip install coverage(ve porcentagem de testes)
+    use coverage report ou html
+4) no arquivo que você vai criar, coveragerc, você coloca as coisas para ignorar
+5) model-mommy para criar usuarios sem se preocupar com campos obrigatorios

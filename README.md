@@ -7,3 +7,5 @@ Repositório das férias de auto impacto.
 
 2) Node
     https://github.com/ftrevo/workshop-nodejs
+
+3) Testes

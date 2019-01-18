@@ -22,3 +22,7 @@ imagina que está dando erro.
     -("{} - {} - {}").format(self.id, self.thread, self.author)
 12) search_fields = ['title', 'slug'] perceba que se desejarmos usar criador, deveremos usar criador__username, pois ele é uma foreign key.
 13) ccbv é um site para estudar views, é top.
+14) podemos usar o {% empty %} para caso um for não encontre nada
+15) não é possível iterar por uma relação 1-N no lado N, mas é possível no lado 1.
+16) Para conseguir no lado N, basta acessar diretamente pelo nome do atributo.
+17) Para ler sobre o form: https://docs.djangoproject.com/pt-br/2.1/ref/forms/validation/

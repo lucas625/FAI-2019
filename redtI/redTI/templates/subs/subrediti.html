@@ -1,7 +1,19 @@
 {% extends 'base.html' %}
 {% block body %}
-        <label>titulo: {{ subrediti.title }}</label>
-        <label>descricao: {{ subrediti.descricao }}</label>
-        <label>criador: {{ subrediti.criador }}</label>
-        <a href="{% url 'subs:create_thread' %}?sub={{subrediti.pk}}">Criar Thread</a>
+        <div>
+                <label style="color: green">titulo: {{ subrediti.title }}</label>
+                <label>descricao: {{ subrediti.descricao }}</label>
+                <label>criador: {{ subrediti.criador }}</label>
+                <div>
+                        <label style="color: orange;">threads</label>
+                        {% for thread in subrediti.threads.all %}
+                                <a href="{% url 'subs:thread' thread.pk %}"><li>{{thread.title}}</li></a>
+                        {% empty %}
+                        <div>
+                                nenhuma thread foi encontrada
+                        </div>
+                        {% endfor %}
+                </div>
+                <a href="{% url 'subs:create_thread' %}?sub={{subrediti.pk}}">Criar Thread</a>
+        <div>
 {% endblock %}

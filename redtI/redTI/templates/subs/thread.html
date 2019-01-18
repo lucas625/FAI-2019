@@ -4,20 +4,19 @@
                 <label>titulo: {{ thread.title }}</label>
                 <label>autor: {{ thread.autor }}</label>
                 <label>votos: {{ thread.vote_count }}</label>
+                
                 <div>
-                        <h3>Subreditis</h3>
-                        {% for sub in thread.subreditis.all %}
-                        <a href="{% url 'subs:subrediti' sub.pk %}"><li>{{sub.title}}</li></a>
-                        {% empty %}
-                        <div>
-                                nenhum subrediti foi encontrado
-                        </div>
-                        {% endfor %}
+                        <h3>Subrediti</h3>
+                                <a href="{% url 'subs:subrediti' thread.subrediti.slug %}"><li>{{thread.subrediti.title}}</li></a>
                 </div>
                 <div>
-                        <h1>Posts</h1>
+                        <h3>Posts</h3>
                         {% for post in thread.posts.all %}
                                 <li>{{post.content}}</li>
+                                <div>
+                                        <div>{{ post.vote_count }}</div>
+                                        <a href="{% url 'core:vote' %}?target_type=post&target_id={{ post.id }}"><button>Like</button></a>
+                                </div>
                         {% empty %}
                         <div>
                                 nenhum post foi encontrado

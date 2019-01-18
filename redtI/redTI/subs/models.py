@@ -45,3 +45,4 @@ class Subscription(models.Model):
 
     def __str__(self):
         return ("{} - {}".format(self.sub, self.user))
+

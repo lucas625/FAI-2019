@@ -1,0 +1,5 @@
+react é biblioteca
+use sempre function ao inves de class quando der
+n use push nas listas, use concat
+react renderiza falso como vazio
+em react className é o class do html
